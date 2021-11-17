@@ -1,0 +1,440 @@
+This is a rule table for the first message bit m[0] for different choices of the chosen ciphertexts u and v and the corresponding
+secret coefficient... Each column corresponds to the coefficient value starting from -4 until +4...
+
+-4, -3, -2, -1,  0,  1,  2,  3,  4
+
+If
+
+ 1,  1,  1,  1,  0,  0,  0,  0,  0, : Choice_u, Choice_v: 985, 12
+
+Then
+
+ 1,  1,  1,  0,  0,  0,  0,  0,  0, : Choice_u, Choice_v: 1000, 12
+ 1,  1,  0,  0,  0,  0,  0,  0,  0, : Choice_u, Choice_v: 991, 13
+ 1,  0,  0,  0,  0,  0,  0,  0,  0, : Choice_u, Choice_v: 985, 14
+
+Else
+
+ 0,  0,  0,  0,  0,  1,  1,  1,  1 : Choice_u, Choice_v: 984, 3
+
+Then
+
+ 0,  0,  0,  0,  0,  0,  1,  1,  1, : Choice_u, Choice_v: 1003, 3
+ 0,  0,  0,  0,  0,  0,  0,  1,  1, : Choice_u, Choice_v: 1008, 3
+ 0,  0,  0,  0,  0,  0,  0,  0,  1, : Choice_u, Choice_v: 1012, 3
+
+
+******************************************************************************************************************************
+LightSABER:
+
+choice_u = {35, 23, 18, 14, 30, 20, 15, 12, 959, 60}
+choice_v = {1, 1, 1, 1, 6, 6, 6, 6, 6, 6}
+
+oracle_responses = {
+                    {1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0},
+                    {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+                    {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1},
+                    {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
+                    {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+                    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+                    {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+                   }
+
+
+oracle_responses_other = {
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+                   {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                    }
+
+
+1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0    - (35, 1)
+1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0    - (23, 1)
+1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0    - (18, 1)
+1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0    - (14, 1)
+
+
+0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1    - (30, 6)
+0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1    - (20, 6)
+0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1    - (15, 6)
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1    - (12, 6)
+
+
+ Choice_u, Choice_v: 14, 1
+ Oracle Responses...
+ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 18, 1
+ Oracle Responses...
+ 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 23, 1
+ Oracle Responses...
+ 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 35, 1
+ Oracle Responses...
+ 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 30, 2
+ Oracle Responses...
+ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 20, 2
+ Oracle Responses...
+ 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 15, 2
+ Oracle Responses...
+ 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 12, 2
+ Oracle Responses...
+ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 12, 6
+ Oracle Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 15, 6
+ Oracle Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 20, 6
+ Oracle Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 30, 6
+ Oracle Responses...
+ 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 35, 5
+ Oracle Responses...
+ 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+ Choice_u, Choice_v: 23, 5
+ Oracle Responses...
+ 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1,
+ Non Zero Responses...
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+Choice_u, Choice_v: 18, 5
+Oracle Responses...
+0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+Choice_u, Choice_v: 14, 5
+Oracle Responses...
+0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+Choice_u, Choice_v: 0, 2
+Oracle Responses...
+1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+
+
+
+
+
+Choice_u, Choice_v: 959, 6
+Oracle Responses...
+0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+Non Zero Responses...
+1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+
+Choice_u, Choice_v: 60, 2
+Oracle Responses...
+0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0,
+Non Zero Responses...
+1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+Choice_u, Choice_v: 60, 6
+Oracle Responses...
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+Non Zero Responses...
+1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+Choice_u, Choice_v: 959, 2
+Oracle Responses...
+0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0,
+Non Zero Responses...
+1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+
+Choice_u, Choice_v: 0, 2
+Oracle Responses...
+0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+******************************************************************************************************************************
+
+SABER:
+
+1, 1, 1, 1, 1, 0, 0, 0, 0 - 28, 4
+
+1, 1, 1, 1, 0, 0, 0, 0, 0 - 37, 3
+1, 1, 1, 0, 0, 0, 0, 0, 0 - 19, 3
+1, 1, 0, 0, 0, 0, 0, 0, 0 - 13, 3
+1, 0, 0, 0, 0, 0, 0, 0, 0 - 10, 3
+
+0, 0, 0, 0, 0, 0, 1, 1, 1 - 14, 12
+0, 0, 0, 0, 0, 0, 0, 1, 1 - 10, 12
+0, 0, 0, 0, 0, 0, 0, 0, 1 - 7, 12
+
+choice_u = {28, 37, 19, 13, 10, 14, 10, 7}
+choice_v = {4, 3, 3, 3, 3, 12, 12, 12}
+
+oracle_responses = {
+                    {1, 1, 1, 1, 1, 0, 0, 0, 0},
+                    {1, 1, 1, 1, 0, 0, 0, 0, 0},
+                    {1, 1, 1, 0, 0, 0, 0, 0, 0},
+                    {1, 1, 0, 0, 0, 0, 0, 0, 0},
+                    {1, 0, 0, 0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0, 1, 1, 1},
+                    {0, 0, 0, 0, 0, 0, 0, 1, 1},
+                    {0, 0, 0, 0, 0, 0, 0, 0, 1},
+                   }
+
+
+oracle_responses_other = {
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                    }
+
+
+Choice_u, Choice_v: 10, 3
+Oracle Responses...
+1, 0, 0, 0, 0, 0, 0, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 13, 3
+Oracle Responses...
+1, 1, 0, 0, 0, 0, 0, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 19, 3
+Oracle Responses...
+1, 1, 1, 0, 0, 0, 0, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 37, 3
+Oracle Responses...
+1, 1, 1, 1, 0, 0, 0, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 28, 4
+Oracle Responses...
+1, 1, 1, 1, 1, 0, 0, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 14, 4
+Oracle Responses...
+1, 1, 1, 1, 1, 1, 0, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 10, 4
+Oracle Responses...
+1, 1, 1, 1, 1, 1, 1, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 7, 4
+Oracle Responses...
+1, 1, 1, 1, 1, 1, 1, 1, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 7, 12
+Oracle Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 10, 12
+Oracle Responses...
+0, 0, 0, 0, 0, 0, 0, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 14, 12
+Oracle Responses...
+0, 0, 0, 0, 0, 0, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 28, 12
+Oracle Responses...
+0, 0, 0, 0, 0, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 37, 11
+Oracle Responses...
+0, 0, 0, 0, 1, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 19, 11
+Oracle Responses...
+0, 0, 0, 1, 1, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 13, 11
+Oracle Responses...
+0, 0, 1, 1, 1, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 10, 11
+Oracle Responses...
+0, 1, 1, 1, 1, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 0, 4
+Oracle Responses...
+1, 1, 1, 1, 1, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+******************************************************************************************************************************
+
+FIRE SABER:
+
+1, 1, 1, 1, 0, 0, 0 - 4, 16
+
+1, 1, 1, 0, 0, 0, 0 - 13, 15
+1, 1, 0, 0, 0, 0, 0 - 7, 15
+1, 0, 0, 0, 0, 0, 0 - 5, 15
+
+0, 0, 0, 0, 0, 0, 1 - 7, 49
+0, 0, 0, 0, 0, 1, 1 - 2, 48
+
+
+choice_u = {4, 13, 7, 5, 2, 7}
+choice_v = {16, 15, 15, 15, 48, 49}
+
+
+oracle_responses = {
+                    {1, 1, 1, 1, 0, 0, 0},
+                    {1, 1, 1, 0, 0, 0, 0},
+                    {1, 1, 0, 0, 0, 0, 0},
+                    {1, 0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 1, 1},
+                    {0, 0, 0, 0, 0, 0, 1},
+                   }
+
+
+oracle_responses_other = {
+                   {0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0},
+                   {0, 0, 0, 0, 0, 0, 0},
+                    }
+
+
+Choice_u, Choice_v: 5, 15
+Oracle Responses...
+1, 0, 0, 0, 0, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 7, 15
+Oracle Responses...
+1, 1, 0, 0, 0, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 13, 15
+Oracle Responses...
+1, 1, 1, 0, 0, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 4, 16
+Oracle Responses...
+1, 1, 1, 1, 0, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 2, 16
+Oracle Responses...
+1, 1, 1, 1, 1, 0, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 7, 17
+Oracle Responses...
+1, 1, 1, 1, 1, 1, 0,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 7, 49
+Oracle Responses...
+0, 0, 0, 0, 0, 0, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 2, 48
+Oracle Responses...
+0, 0, 0, 0, 0, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 4, 48
+Oracle Responses...
+0, 0, 0, 0, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 13, 47
+Oracle Responses...
+0, 0, 0, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 7, 47
+Oracle Responses...
+0, 0, 1, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 5, 47
+Oracle Responses...
+0, 1, 1, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
+Choice_u, Choice_v: 0, 16
+Oracle Responses...
+1, 1, 1, 1, 1, 1, 1,
+Non Zero Responses...
+0, 0, 0, 0, 0, 0, 0,
